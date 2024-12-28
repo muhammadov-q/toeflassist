@@ -1,9 +1,11 @@
 import { NextConfig } from 'next';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
-  output: 'export', // Enables static export
-  trailingSlash: true, // Ensures URLs have trailing slashes
-  assetPrefix: './', // Use relative paths for assets
+  basePath: isProd ? '/toeflassist' : '',
+  assetPrefix: isProd ? '/toeflassist/' : '',
+  trailingSlash: true, // Ensures that all routes and assets have a trailing slash for static deployment
 };
 
 export default nextConfig;
