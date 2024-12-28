@@ -45,7 +45,7 @@ export default function Contact() {
           <div className="w-full lg:w-1/2 relative">
             <div className="aspect-w-4 aspect-h-3">
               <Image
-                src="/contact.png"
+                src="https://muhammadov-q.github.io/toeflassist/contact.png"
                 alt="Students collaborating with AI assistance"
                 width={800}
                 height={600}
