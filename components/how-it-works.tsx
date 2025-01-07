@@ -9,57 +9,57 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const steps = [
   {
-    value: "assess",
-    title: "1. Assess Your Level",
-    description: "Begin your TOEFL journey with a comprehensive diagnostic test.",
+    value: "consultation",
+    title: "1. Консультация",
+    description: "На начальном этапе мы проводим бесплатную консультацию и заключаем договор.",
     details: [
-      "Complete a full-length TOEFL practice test",
-      "Receive a detailed breakdown of your performance in each section",
-      "Identify your strengths and areas for improvement",
-      "Get an initial estimated TOEFL score"
+      "Выясняем ваши цели и уровень английского языка",
+      "Разрабатываем персонализированный план подготовки",
+      "Согласовываем условия и подписываем договор",
+      "Составляем график занятий"
     ],
-    icon: "📊"
+    icon: "💬"
   },
   {
-    value: "plan",
-    title: "2. Get a Personalized Plan",
-    description: "Our AI crafts a study plan tailored to your needs and goals.",
+    value: "registration",
+    title: "2. Регистрация",
+    description: "Помогаем с регистрацией на экзамен и подготовкой к нему.",
     details: [
-      "Set your target TOEFL score and test date",
-      "AI analyzes your diagnostic results and goals",
-      "Receive a week-by-week study schedule",
-      "Get personalized resource recommendations"
+      "Выбираем удобную дату и время экзамена",
+      "Помогаем с процессом регистрации",
+      "Настраиваем все необходимые программы",
+      "Проводим пробное тестирование оборудования"
     ],
-    icon: "🎯"
+    icon: "📝"
   },
   {
-    value: "practice",
-    title: "3. Practice with Purpose",
-    description: "Engage with targeted exercises and full-length tests.",
+    value: "exam",
+    title: "3. Сдача экзамена",
+    description: "Оказываем поддержку во время сдачи экзамена по всем разделам, кроме Speaking.",
     details: [
-      "Access section-specific practice questions",
-      "Complete AI-recommended exercises based on your weak areas",
-      "Take periodic full-length TOEFL practice tests",
-      "Receive instant feedback and explanations for each question"
+      "Обеспечиваем техническую поддержку",
+      "Помогаем со всеми разделами теста",
+      "Контролируем время выполнения",
+      "Предоставляем моральную поддержку"
     ],
-    icon: "🏋️‍♂️"
+    icon: "✍️"
   },
   {
-    value: "improve",
-    title: "4. Track and Improve",
-    description: "Monitor your progress and refine your approach.",
+    value: "result",
+    title: "4. Получение результата",
+    description: "Сертификат будет доступен через три недели после сдачи экзамена.",
     details: [
-      "View detailed analytics of your performance over time",
-      "Track your estimated TOEFL score as you practice",
-      "Receive AI-powered suggestions for improvement",
-      "Adjust your study plan based on your progress"
+      "Получаем и анализируем результаты",
+      "Выдаем официальный сертификат",
+      "Предоставляем рекомендации по дальнейшим шагам",
+      "Помогаем с подачей результатов в учебные заведения"
     ],
-    icon: "📈"
-  },
+    icon: "🎓"
+  }
 ]
 
 export default function HowItWorks() {
-  const [activeTab, setActiveTab] = useState("assess")
+  const [activeTab, setActiveTab] = useState("consultation")
   const [direction, setDirection] = useState(0)
 
   useEffect(() => {
@@ -93,7 +93,7 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="mb-40 opacity-100 animate-fade-in-up px-4 sm:px-6 lg:px-8">
       <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-        Your Path to TOEFL Success
+        Шаги для отличной сдачи экзамена
       </h2>
       <Tabs
         value={activeTab}
@@ -166,7 +166,7 @@ export default function HowItWorks() {
               disabled={activeTab === steps[0].value}
               className="flex items-center gap-2"
             >
-              <ChevronLeft className="h-4 w-4" /> Previous
+              <ChevronLeft className="h-4 w-4" /> Назад
             </Button>
             <Button
               variant="outline"
@@ -175,7 +175,7 @@ export default function HowItWorks() {
               disabled={activeTab === steps[steps.length - 1].value}
               className="flex items-center gap-2"
             >
-              Next <ChevronRight className="h-4 w-4" />
+              Далее <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
         </div>
