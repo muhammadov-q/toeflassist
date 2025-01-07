@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { PhoneIcon as WhatsappIcon, InstagramIcon, SendIcon, MailIcon } from 'lucide-react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -26,6 +27,13 @@ export default function Contact() {
     setIsSubmitting(false)
   }
 
+  const socialLinks = [
+    { icon: WhatsappIcon, href: 'https://wa.me/yourphonenumber', label: 'WhatsApp', bgColor: 'bg-green-500', hoverColor: 'hover:bg-green-600' },
+    { icon: InstagramIcon, href: 'https://instagram.com/yourusername', label: 'Instagram', bgColor: 'bg-pink-500', hoverColor: 'hover:bg-pink-600' },
+    { icon: SendIcon, href: 'https://t.me/yourusername', label: 'Telegram', bgColor: 'bg-blue-500', hoverColor: 'hover:bg-blue-600' },
+    { icon: MailIcon, href: 'mailto:your@email.com', label: 'Email', bgColor: 'bg-red-500', hoverColor: 'hover:bg-red-600' },
+  ]
+
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -34,9 +42,23 @@ export default function Contact() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
               Остались вопросы?
             </h2>
-            <p className="text-xl text-[#1e3a8a] dark:text-white mb-8">
+            <p className="text-xl text-[#1e3a8a] dark:text-white mb-4">
               Свяжитесь с нами и менеджер проконсультирует вас бесплатно.
             </p>
+            <div className="flex space-x-6 mb-8">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${link.bgColor} ${link.hoverColor} text-white p-3 rounded-full transition-colors duration-300 transform hover:scale-110`}
+                  aria-label={link.label}
+                >
+                  <link.icon className="w-6 h-6" />
+                </a>
+              ))}
+            </div>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
