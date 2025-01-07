@@ -40,16 +40,20 @@ export default function Footer() {
           {/* Logo, Slogan, and Social Links */}
           <div className="flex flex-col items-start">
             <Link href="/" className="flex items-center mb-4">
-              <Image src="https://muhammadov-q.github.io/toeflassist/logo.png" alt="Toefl Assist Логотип" width={40} height={40} />
-              <span className="ml-2 text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">Toefl Assist</span>
+              <Image src="https://muhammadov-q.github.io/toeflassist/logo.png" alt="Toefl Assist Логотип" width={62}
+                     height={62}/>
+              <div className="ml-2 flex flex-col justify-center h-full">
+                <span
+                    className="text-lg font-bold text-black dark:text-white uppercase leading-none">TOEFL ASSIST</span>
+                <span className="mt-1 text-xs text-gray-600 dark:text-gray-400 leading-none pr-4">Быстро, удобно, безопасно, на высокий балл</span>
+              </div>
             </Link>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">быстро, удобно, безопасно, на высокий балл</p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  <a
+                      key={link.label}
+                      href={link.href}
+                      className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                   aria-label={link.label}
                 >
                   <link.icon className="h-6 w-6" />
