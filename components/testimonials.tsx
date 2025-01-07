@@ -1,31 +1,43 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const testimonials = [
   {
-    name: "Sarah L.",
-    image: "/placeholder.svg?height=100&width=100",
-    score: "110",
-    quote: "Toefl Assist's AI-powered approach boosted my score by 25 points! The personalized study plan was a game-changer."
+    name: "ЕКАТЕРИНА",
+    university: "Поступила в University of Amsterdam",
+    quote: "Вы стали для меня настоящим ключиком! Помогли во всем: от подготовки к IELTS до подачи документов. Я очень переживала за тест, но благодаря вам сдала на 7.5 и теперь учусь в Амстердаме!",
+    image: "👩"
   },
   {
-    name: "Michael T.",
-    image: "/placeholder.svg?height=100&width=100",
-    score: "108",
-    quote: "The virtual reality practice tests and AI tutoring sessions made me feel fully prepared. Toefl Assist is truly next-gen!"
+    name: "АЛЕКСАНДР",
+    university: "Поступил в University of British Columbia",
+    quote: "Учеба в Канаде была моей мечтой, и ребята помогли сделать её реальностью. Подготовили меня к TOEFL, объяснили, как лучше подать документы, и поддержали на всех этапах. В итоге — 89 баллов по TOEFL и поступление на компьютерные науки в UBC.",
+    image: "👨"
   },
   {
-    name: "Emily W.",
-    image: "/placeholder.svg?height=100&width=100",
-    score: "115",
-    quote: "I was amazed by how much I improved in just 8 weeks. The adaptive learning technology is incredibly effective!"
+    name: "АЙЖАН",
+    university: "Поступила в University of Southern California",
+    quote: "С toefl assist мне удалось поступить в США. Они помогли сдать TOEFL, что было очень важно — нужно было сдать на 100+ баллов. С их поддержкой я добился нужного результата, и теперь учусь в Калифорнии.",
+    image: "👩"
+  },
+  {
+    name: "АЗИЗ",
+    university: "Поступил в University of Toronto",
+    quote: "Ребята помогли мне подготовиться к TOEFL и составить отличное портфолио для поступления. Я набрал 93 балла и получил место в университете мечты. Спасибо за поддержку на всех этапах!",
+    image: "👨"
+  },
+  {
+    name: "АННА",
+    university: "Поступила в King's College London",
+    quote: "Вы помогли мне разобраться с выбором университета, подготовиться к IELTS и написать мотивационное письмо. С вашей помощью я добилась результата и теперь учусь в Лондоне!",
+    image: "👩"
   }
-]
+];
+
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -39,45 +51,76 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="mb-40 opacity-100 animate-fade-in-up">
-      <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-        Success Stories
+    <section id="testimonials" className="mb-40 opacity-100 animate-fade-in-up px-4 sm:px-6 lg:px-8">
+      <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+        ОТЗЫВЫ
       </h2>
-      <div className="relative max-w-4xl mx-auto">
-        <Card className="border-none shadow-lg backdrop-blur-xl bg-white/10 rounded-2xl p-8">
-          <CardContent className="p-6">
-            <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-              <Image
-                src={testimonials[currentIndex].image}
-                alt={testimonials[currentIndex].name}
-                width={100}
-                height={100}
-                className="rounded-full border-4 border-blue-400"
-              />
-              <div className="text-center md:text-left">
-                <p className="text-lg mb-4 text-gray-700 dark:text-gray-300 italic">&ldquo;{testimonials[currentIndex].quote}&rdquo;</p>
-                <p className="font-semibold text-xl text-white">{testimonials[currentIndex].name}</p>
-                <p className="text-blue-400">TOEFL Score: {testimonials[currentIndex].score}</p>
+      <div className="relative max-w-5xl mx-auto">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
+          >
+            <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+              <div className="flex flex-col items-center md:items-start">
+                <div className="text-4xl mb-4 text-[#1e3a8a] dark:text-blue-400">
+                  {testimonials[currentIndex].image}
+                </div>
+                <h3 className="text-xl font-bold text-[#1e3a8a] dark:text-blue-400 mb-2">
+                  {testimonials[currentIndex].name}
+                </h3>
+                <p className="text-sm text-[#1e3a8a]/80 dark:text-blue-400/80 text-center md:text-left">
+                  {testimonials[currentIndex].university}
+                </p>
+              </div>
+              <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 shadow-sm">
+                <p className="text-[#1e3a8a] dark:text-gray-200 text-lg leading-relaxed">
+                  {testimonials[currentIndex].quote}
+                </p>
               </div>
             </div>
-          </CardContent>
-        </Card>
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-purple-500 backdrop-blur-xl border-white/20 text-white hover:bg-white/20"
-          onClick={prevTestimonial}
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </Button>
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-purple-500 backdrop-blur-xl border-white/20 text-white hover:bg-white/20"
-          onClick={nextTestimonial}
-        >
-          <ChevronRight className="h-6 w-6" />
-        </Button>
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="flex justify-center mt-8 gap-4">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={prevTestimonial}
+            className="rounded-full border-2 border-[#1e3a8a] dark:border-blue-400 text-[#1e3a8a] dark:text-blue-400 hover:bg-[#1e3a8a] hover:text-white dark:hover:bg-blue-400 dark:hover:text-white transition-colors"
+          >
+            <ChevronLeft className="h-6 w-6" />
+            <span className="sr-only">Предыдущий отзыв</span>
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={nextTestimonial}
+            className="rounded-full border-2 border-[#1e3a8a] dark:border-blue-400 text-[#1e3a8a] dark:text-blue-400 hover:bg-[#1e3a8a] hover:text-white dark:hover:bg-blue-400 dark:hover:text-white transition-colors"
+          >
+            <ChevronRight className="h-6 w-6" />
+            <span className="sr-only">Следующий отзыв</span>
+          </Button>
+        </div>
+
+        <div className="flex justify-center mt-4 gap-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-[#1e3a8a] dark:bg-blue-400 w-4' 
+                  : 'bg-[#1e3a8a]/30 dark:bg-blue-400/30 hover:bg-[#1e3a8a]/50 dark:hover:bg-blue-400/50'
+              }`}
+              aria-label={`Перейти к отзыву ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
