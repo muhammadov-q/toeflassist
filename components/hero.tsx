@@ -3,14 +3,26 @@
 import { useState, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, PlayCircle, CheckCircle, X } from 'lucide-react'
+import { ArrowRight, PlayCircle, ArrowUpRight, X } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 
 const features = [
-  "AI-powered personalized study plans",
-  "Real-time progress tracking",
-  "Interactive speaking practice",
-  "Adaptive question bank"
+  {
+    title: "Тест IELTS",
+    description: "Узнаете формат и динамику экзамена, прокачаете слабые стороны для получения отличного результата"
+  },
+  {
+    title: "Тест TOEFL",
+    description: "Готовим к выпускным экзаменам и сдаче экзамена для поступления в любой стране."
+  },
+  {
+    title: "Тест GRE",
+    description: "Подготовка к GRE для поступления в аспирантуру в США и другие страны."
+  },
+  {
+    title: "Тест GMAT",
+    description: "Подготовка к GMAT для поступления в бизнес-школы в США и другие страны."
+  }
 ]
 
 export default function Hero() {
@@ -44,133 +56,109 @@ export default function Hero() {
     }
   }
 
+  const scrollToContacts = () => {
+    const contactsSection = document.getElementById('contact')
+    if (contactsSection) {
+      contactsSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section id="hero" className="relative text-center mb-20 pt-4 overflow-hidden">
-      <style jsx>{`
-        .h1-background {
-          position: relative;
-          display: inline-block;
-          padding: 2rem 1rem;
-          margin: 2rem 0;
-        }
-
-        .dark .h1-background::before {
-          background-image: 
-            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
-        }
-        
-
-        .video-modal {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: rgba(0, 0, 0, 0.8);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 1000;
-        }
-
-        .video-container {
-          position: relative;
-          width: 80%;
-          max-width: 800px;
-          aspect-ratio: 16 / 9;
-        }
-
-        .close-button {
-          position: absolute;
-          top: -40px;
-          right: 0;
-          background: none;
-          border: none;
-          color: white;
-          font-size: 24px;
-          cursor: pointer;
-        }
-      `}</style>
-
-      <div className="h1-background">
-        <div className="h1-glow"></div>
-        <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent leading-tight"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Хочешь сдать языковой тест успешно?
-        </motion.h1>
-      </div>
-
-      <motion.div
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={controls}
-        className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
-      >
-        <motion.p
-          variants={itemVariants}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-700 dark:text-gray-300 leading-relaxed"
-        >
-          Мы помогаем сосдачей разных тестов и экзаменов повашему запросу непокидая Российскую Федерацию
-        </motion.p>
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8 sm:mb-10"
-        >
-          <Button
-            className="bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-auto"
+      <section id="hero" className="relative text-center mb-20 pt-0 lg:pt-4 overflow-hidden">
+        <div className="h1-background mb-4 py-2">
+          <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent leading-tight px-4 py-2 mb-2"
+              initial={{opacity: 0, y: 20}}
+              animate={{opacity: 1, y: 0}}
+              transition={{duration: 0.8}}
           >
-            Launch Your Journey <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-          </Button>
-          <Button
-            variant="outline"
-            className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-400 dark:hover:text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-purple-400/50 w-full sm:w-auto"
-            onClick={() => setShowVideo(true)}
-          >
-            Watch Demo <PlayCircle className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-          </Button>
-        </motion.div>
-        <motion.div
-          variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="flex items-center mb-4 space-x-2 text-left bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-            >
-              <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 flex-shrink-0" />
-              <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">{feature}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-
-      {showVideo && (
-        <div className="video-modal">
-          <div className="video-container">
-            <button className="close-button" onClick={() => setShowVideo(false)}>
-              <X />
-            </button>
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Product Demo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+            Хочешь сдать языковой тест успешно?
+          </motion.h1>
         </div>
-      )}
-    </section>
+
+        <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <motion.p
+              variants={itemVariants}
+              className="text-sm pt-4 sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
+          >
+            Мы помогаем с сдачей разных тестов и экзаменов по вашему запросу не покидая Российскую Федерацию
+          </motion.p>
+
+          <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12 sm:mb-16 max-w-3xl mx-auto"
+          >
+            <Button
+            className="bg-[#FF5733] text-white hover:bg-[#E64D2E] dark:bg-[#FF5733] dark:hover:bg-[#E64D2E] text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#FF5733]/50 w-full sm:w-auto"
+            onClick={scrollToContacts}
+          >
+            Начать обучение <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+          </Button>
+            <Button
+                variant="outline"
+                className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-400 dark:hover:text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full transform transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-purple-400/50 w-full sm:w-auto"
+                onClick={() => setShowVideo(true)}
+            >
+              Смотреть демо <PlayCircle className="ml-2 h-4 w-4 sm:h-5 sm:w-5"/>
+            </Button>
+          </motion.div>
+
+          <motion.div
+              variants={containerVariants}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto"
+          >
+            {features.map((feature, index) => (
+                <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="relative overflow-hidden group cursor-pointer"
+                    onClick={scrollToContacts}
+                >
+                  <div
+                      className="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:border-blue-500 dark:hover:border-blue-400 h-full">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-left mb-8">
+                      {feature.description}
+                    </p>
+                    <div
+                        className="absolute bottom-4 right-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                      <ArrowUpRight className="h-6 w-6 text-blue-500 dark:text-blue-400"/>
+                    </div>
+                  </div>
+                </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {showVideo && (
+            <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+              <div className="relative w-full max-w-4xl mx-4 aspect-video">
+                <button
+                    className="absolute -top-10 right-0 text-white hover:text-gray-300"
+                    onClick={() => setShowVideo(false)}
+                >
+                  <X className="h-8 w-8"/>
+                </button>
+                <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Product Demo"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+        )}
+      </section>
   )
 }
 
