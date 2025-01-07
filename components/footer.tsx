@@ -40,10 +40,10 @@ export default function Footer() {
           {/* Logo, Slogan, and Social Links */}
           <div className="flex flex-col items-start">
             <Link href="/" className="flex items-center mb-4">
-              <Image src="/logo.svg" alt="Toefl Assist Logo" width={40} height={40} />
+              <Image src="https://muhammadov-q.github.io/toeflassist/logo.png" alt="Toefl Assist Logo" width={40} height={40} />
               <span className="ml-2 text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">Toefl Assist</span>
             </Link>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Empowering your TOEFL success with AI-driven precision</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">быстро, удобно, безопасно, на высокий баллx</p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <a

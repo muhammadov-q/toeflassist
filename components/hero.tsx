@@ -54,44 +54,12 @@ export default function Hero() {
           margin: 2rem 0;
         }
 
-        .h1-background::before {
-          content: '';
-          position: absolute;
-          top: -200%;
-          left: -200%;
-          right: -200%;
-          bottom: -200%;
-          background-image: 
-            linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px);
-          background-size: 20px 20px;
-          mask-image: 
-            linear-gradient(to right, transparent, black 20%, black 80%, transparent),
-            linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-          -webkit-mask-image: 
-            linear-gradient(to right, transparent, black 20%, black 80%, transparent),
-            linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-          mask-composite: intersect;
-          -webkit-mask-composite: source-in;
-          z-index: -1;
-        }
-
         .dark .h1-background::before {
           background-image: 
             linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
         }
-
-        .h1-glow {
-          position: absolute;
-          top: -50px;
-          left: -50px;
-          right: -50px;
-          bottom: -50px;
-          background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(147,51,234,0.1) 50%, rgba(147,51,234,0) 100%);
-          filter: blur(30px);
-          z-index: -2;
-        }
+        
 
         .video-modal {
           position: fixed;
@@ -133,7 +101,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Master the TOEFL with AI-Powered Precision
+          Хочешь сдать языковой тест успешно?
         </motion.h1>
       </div>
 
@@ -148,7 +116,7 @@ export default function Hero() {
           variants={itemVariants}
           className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-700 dark:text-gray-300 leading-relaxed"
         >
-          Harness the power of advanced AI and personalized coaching to boost your TOEFL score by up to 30 points.
+          Мы помогаем сосдачей разных тестов и экзаменов повашему запросу непокидая Российскую Федерацию
         </motion.p>
         <motion.div
           variants={itemVariants}

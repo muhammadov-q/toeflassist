@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full overflow-hidden bg-white dark:bg-black flex flex-col items-center justify-center text-black dark:text-white scroll-smooth">
+    <div className="min-h-screen w-full overflow-hidden bg-gray-50 dark:bg-slate-950 flex flex-col items-center justify-center text-black dark:text-white scroll-smooth">
       <Navbar />
       <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24">
         <Hero />
