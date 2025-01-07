@@ -8,14 +8,14 @@ import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger
 import {ChevronDown, Globe, HelpCircle, Home, Menu, MessageCircle, Moon, Rocket, Sun, Trophy, X} from 'lucide-react'
 
 const navItems = [
-    {href: "#hero", label: "Home", icon: Home},
-    {href: "#how-it-works", label: "How It Works", icon: Rocket},
-    {href: "#results", label: "Results", icon: Trophy},
-    {href: "#testimonials", label: "Testimonials", icon: MessageCircle},
+    {href: "#hero", label: "Главная", icon: Home},
+    {href: "#how-it-works", label: "Как это работает", icon: Rocket},
+    {href: "#results", label: "Результаты", icon: Trophy},
+    {href: "#testimonials", label: "Отзывы", icon: MessageCircle},
     {href: "#faq", label: "FAQ", icon: HelpCircle},
 ]
 
-const languages = ['Coming Soon','English', 'Russian', 'Uzbek']
+const languages = ['Русский 🇷🇺']
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -94,13 +94,13 @@ export default function Navbar() {
                                     className="bg-green-500 text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700"
                                     onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
                                 >
-                                    Contact
+                                    Связаться
                                 </Button>
                                 <Button
                                     variant="ghost"
                                     size="icon"
                                     onClick={toggleMenu}
-                                    aria-label="Toggle menu"
+                                    aria-label="Переключить меню"
                                     className="text-black bg-gray-200 dark:text-white dark:bg-gray-800 p-1"
                                 >
                                     {isOpen ? <X className="h-8 w-8"/> : <Menu className="h-8 w-8"/>}
@@ -136,7 +136,7 @@ export default function Navbar() {
                                 className="bg-green-500 text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700"
                                 onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
                             >
-                                Contact Now
+                                Связаться
                             </Button>
                             <Button
                                 variant="ghost"
@@ -200,7 +200,7 @@ export default function Navbar() {
                                     >
                                         {theme === 'light' ? <Moon className="h-5 w-5 mr-2"/> :
                                             <Sun className="h-5 w-5 mr-2"/>}
-                                        {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+                                        {theme === 'light' ? 'Темная тема' : 'Светлая тема'}
                                     </Button>
                                     <DropdownMenu>
                                         <DropdownMenuTrigger asChild>
@@ -237,4 +237,3 @@ export default function Navbar() {
         </header>
     )
 }
-
