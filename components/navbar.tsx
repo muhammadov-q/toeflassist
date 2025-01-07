@@ -142,14 +142,14 @@ export default function Navbar() {
                                 variant="ghost"
                                 size="icon"
                                 onClick={toggleTheme}
-                                className="text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full p-2 bg-gray-100 dark:bg-gray-800"
+                                className="text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md p-2 bg-gray-100 dark:bg-gray-800"
                             >
                                 {theme === 'light' ? <Moon className="h-5 w-5"/> : <Sun className="h-5 w-5"/>}
                             </Button>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button variant="ghost" size="icon"
-                                            className="text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full p-2 bg-gray-100 dark:bg-gray-800">
+                                            className="text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md p-2 bg-gray-100 dark:bg-gray-800">
                                         <Globe className="h-5 w-5"/>
                                     </Button>
                                 </DropdownMenuTrigger>

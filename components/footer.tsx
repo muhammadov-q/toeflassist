@@ -33,7 +33,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="w-full bg-gradient-to-b from-blue-50 to-purple-50 dark:from-blue-900 dark:to-purple-900 text-gray-800 dark:text-gray-200 relative">
+    <footer className="w-full bg-gradient-to-b from-blue-50 to-purple-50 dark:from-slate-900 dark:to-gray-900 text-gray-800 dark:text-gray-200 relative">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
