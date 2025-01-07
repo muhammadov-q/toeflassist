@@ -60,7 +60,7 @@ export default function Contact() {
               ))}
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className=" space-y-6">
             <div>
               <label htmlFor="name" className="block text-[#1e3a8a] dark:text-white mb-2">Ваше имя</label>
               <Input
@@ -71,7 +71,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Иван"
                 required
-                className="w-full"
+                className="w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
@@ -84,7 +84,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="+7 (999) 123-45-67"
                 required
-                className="w-full"
+                className="w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
@@ -97,7 +97,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="@toeflassist"
                 required
-                className="w-full"
+                className="w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-700 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <Button
