@@ -50,7 +50,7 @@ export default function FAQ() {
             value={`item-${index}`}
             className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm"
           >
-            <AccordionTrigger className="text-lg font-medium text-[#1e3a8a] dark:text-blue-400 hover:no-underline px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+            <AccordionTrigger className="text-lg font-medium text-[#1e3a8a] dark:text-white hover:no-underline px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
               {faq.question}
             </AccordionTrigger>
             <AccordionContent className="text-base text-gray-700 dark:text-gray-300 bg-white/30 dark:bg-gray-800/30 px-6 py-4">
