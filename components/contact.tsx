@@ -1,22 +1,18 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Send, Loader2 } from 'lucide-react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    subject: '',
-    message: ''
+    phone: '',
+    telegram: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData(prevState => ({ ...prevState, [name]: value }))
   }
@@ -24,110 +20,72 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000))
     console.log('Form submitted:', formData)
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setFormData({ name: '', phone: '', telegram: '' })
     setIsSubmitting(false)
-    alert('Message sent successfully!')
   }
 
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-          Get in Touch
-        </h2>
-        <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
-          Have questions about TOEFL preparation or our AI-powered learning platform? We&apos;re here to help! Send us a message and we&apos;ll get back to you shortly.
-        </p>
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <div className="w-full lg:w-1/2 relative">
-            <div className="aspect-w-4 aspect-h-3">
-              <Image
-                src="https://muhammadov-q.github.io/toeflassist/contact.png"
-                alt="Students collaborating with AI assistance"
-                width={800}
-                height={600}
-                layout="responsive"
-                className="object-cover"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+              Остались вопросы?
+            </h2>
+            <p className="text-xl text-[#1e3a8a] dark:text-white mb-8">
+              Свяжитесь с нами и менеджер проконсультирует вас бесплатно.
+            </p>
+          </div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-[#1e3a8a] dark:text-white mb-2">Ваше имя</label>
+              <Input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Иван"
+                required
+                className="w-full"
               />
             </div>
-          </div>
-          <div className="w-full lg:w-1/2">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <Input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your Name"
-                    required
-                    className="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
-                    aria-label="Your Name"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Your Email"
-                    required
-                    className="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
-                    aria-label="Your Email"
-                  />
-                </div>
-              </div>
-              <div>
-                <Input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Subject"
-                  required
-                  className="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
-                  aria-label="Subject"
-                />
-              </div>
-              <div>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your Message"
-                  required
-                  className="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 min-h-[120px]"
-                  aria-label="Your Message"
-                />
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-200"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="mr-2 h-4 w-4" />
-                    Send Message
-                  </>
-                )}
-              </Button>
-            </form>
-          </div>
+            <div>
+              <label htmlFor="phone" className="block text-[#1e3a8a] dark:text-white mb-2">Номер телефона</label>
+              <Input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+7 (999) 123-45-67"
+                required
+                className="w-full"
+              />
+            </div>
+            <div>
+              <label htmlFor="telegram" className="block text-[#1e3a8a] dark:text-white mb-2">Никнейм в телеграм</label>
+              <Input
+                type="text"
+                id="telegram"
+                name="telegram"
+                value={formData.telegram}
+                onChange={handleChange}
+                placeholder="@toeflassist"
+                required
+                className="w-full"
+              />
+            </div>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-[#F15A2B] hover:bg-[#d94d22] text-white font-medium py-3 text-lg"
+            >
+              Оставить заявку
+            </Button>
+          </form>
         </div>
       </div>
     </section>
