@@ -35,7 +35,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="mb-40 opacity-100 animate-fade-in-up px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
