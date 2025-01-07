@@ -15,7 +15,7 @@ const navItems = [
     {href: "#faq", label: "FAQ", icon: HelpCircle},
 ]
 
-const languages = ['English', 'Español', '中文', '日本語', 'Français']
+const languages = ['Coming Soon','English', 'Russian', 'Uzbek']
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
