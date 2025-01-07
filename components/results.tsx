@@ -73,7 +73,7 @@ export default function Results() {
         <div className="flex-grow">
           <div className="flex justify-between items-center mb-2">
             <p className="text-blue-600 dark:text-blue-400 text-lg font-semibold">{result.testName}</p>
-            <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">Score: {result.totalScore}</p>
+            <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">Балл: {result.totalScore}</p>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{result.details}</p>
           <Button
@@ -83,11 +83,11 @@ export default function Results() {
           >
             {expandedResult === result.id ? (
               <>
-                See Less <ChevronUp className="ml-1 h-4 w-4" />
+                Свернуть <ChevronUp className="ml-1 h-4 w-4" />
               </>
             ) : (
               <>
-                See More <ChevronDown className="ml-1 h-4 w-4" />
+                Подробнее <ChevronDown className="ml-1 h-4 w-4" />
               </>
             )}
           </Button>
@@ -100,12 +100,13 @@ export default function Results() {
                 transition={{ duration: 0.3 }}
                 className="mt-4 text-sm text-gray-600 dark:text-gray-400"
               >
-                <p className="mb-2">Additional details about the test performance and preparation strategies can be found in the full report.</p>
+                <p className="mb-2">Дополнительные сведения о результатах теста и стратегиях подготовки можно найти в полном отчете.</p>
                 <Button
                   variant="link"
                   className="p-0 h-auto text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200"
+                  title="Скоро будет доступно"
                 >
-                  View Full Report <ArrowUpRight className="ml-1 h-4 w-4 inline" />
+                  Посмотреть полный отчет <ArrowUpRight className="ml-1 h-4 w-4 inline" />
                 </Button>
               </motion.div>
             )}
@@ -118,14 +119,14 @@ export default function Results() {
   return (
     <section id="results" className="mb-40 opacity-100 animate-fade-in-up px-4 sm:px-6 lg:px-8">
       <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-        Stellar Student Achievements
+        Выдающиеся достижения студентов
       </h2>
       <div className="w-full max-w-6xl mx-auto">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div className="relative flex-grow max-w-md">
             <Input
               type="text"
-              placeholder="Search by score or test"
+              placeholder="Поиск по баллам или тесту"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10 pr-4 py-2 w-full border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
@@ -137,13 +138,13 @@ export default function Results() {
               onClick={toggleSortOrder}
               className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200 flex items-center space-x-2"
             >
-              <span className="hidden sm:inline">Sort</span> {sortOrder === 'asc' ? <SortAsc size={16} /> : <SortDesc size={16} />}
+              <span className="hidden sm:inline">Сортировка</span> {sortOrder === 'asc' ? <SortAsc size={16} /> : <SortDesc size={16} />}
             </Button>
             <Button
               onClick={() => setShowFilters(!showFilters)}
               className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200 flex items-center space-x-2"
             >
-              <Filter size={16} /> <span className="hidden sm:inline">Filters</span>
+              <Filter size={16} /> <span className="hidden sm:inline">Фильтры</span>
             </Button>
           </div>
         </div>
@@ -159,14 +160,14 @@ export default function Results() {
             >
               <div className="flex flex-wrap gap-4">
                 <div className="flex-grow">
-                  <label htmlFor="filter" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Filter by score:</label>
+                  <label htmlFor="filter" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Фильтр по баллам:</label>
                   <select
                     id="filter"
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
                     className="w-full border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
                   >
-                    <option value="all">All Scores</option>
+                    <option value="all">Все баллы</option>
                     <option value="reading">Reading ≥ 25</option>
                     <option value="listening">Listening ≥ 25</option>
                     <option value="speaking">Speaking ≥ 25</option>
@@ -201,9 +202,9 @@ export default function Results() {
           {!showAll && filteredResults.length > 6 && (
             <Button
               onClick={() => setShowAll(true)}
-              className="bg-blue-500 hover:bg-blue-600 text-white text-lg px-6 py-2 rounded-md transition-colors duration-200"
+              className="bg-[#FF5733] text-white hover:bg-[#E64D2E] dark:bg-[#FF5733] dark:hover:bg-[#E64D2E] text-white text-lg px-6 py-2 rounded-md transition-colors duration-200"
             >
-              View More Success Stories
+              Смотреть еще
             </Button>
           )}
           {showAll && (
@@ -211,7 +212,7 @@ export default function Results() {
               onClick={() => setShowAll(false)}
               className="bg-purple-500 hover:bg-purple-600 text-white text-lg px-6 py-2 rounded-md transition-colors duration-200"
             >
-              Show Less
+              Показать меньше
             </Button>
           )}
         </div>
