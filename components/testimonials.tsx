@@ -53,7 +53,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="mb-40 opacity-100 animate-fade-in-up px-4 sm:px-6 lg:px-8">
       <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-        ОТЗЫВЫ
+        Отзывы наших студентов
       </h2>
       <div className="relative max-w-5xl mx-auto">
         <AnimatePresence mode="wait">
