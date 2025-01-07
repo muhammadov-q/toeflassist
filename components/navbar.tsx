@@ -20,7 +20,7 @@ const languages = ['Русский 🇷🇺']
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const [theme, setTheme] = useState('light')
-    const [language, setLanguage] = useState('English')
+    const [language, setLanguage] = useState('Русский 🇷🇺')
     const [activeItem, setActiveItem] = useState('hero')
     const menuRef = useRef<HTMLDivElement>(null)
 
