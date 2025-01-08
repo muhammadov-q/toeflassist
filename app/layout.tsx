@@ -5,6 +5,14 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+   icons: {
+    icon: [
+      {
+        url: "https://muhammadov-q.github.io/toeflassist/favicon.ico",
+        href: "https://muhammadov-q.github.io/toeflassist/favicon.ico",
+      },
+    ],
+  },
   title: 'Toefl Assist',
   description: 'Быстро, удобно, безопасно, на высокий балл',
   openGraph: {
