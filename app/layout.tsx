@@ -6,18 +6,18 @@ const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.toeflassist.org'),
-  title: 'Toefl Assist - Подготовка к TOEFL | Быстро, удобно, безопасно',
-  description: 'Toefl Assist предлагает эффективную подготовку к TOEFL, IELTS, GRE и GMAT. Получите высокий балл с нашей помощью. Быстро, удобно, безопасно.',
-  keywords: 'TOEFL, IELTS, GRE, GMAT, подготовка к экзаменам, изучение английского, онлайн обучение, языковые тесты',
+  title: 'Toefl Assist - Быстро. Удобно. Безопасно.',
+  description: 'Toefl Assist предоставляет консультации по TOEFL, IELTS, GRE и GMAT. Получите профессиональную поддержку для достижения ваших целей.',
+  keywords: 'TOEFL, IELTS, GRE, GMAT, консультации по экзаменам, языковые тесты, академический английский',
   openGraph: {
-    title: 'Toefl Assist - Эффективная подготовка к языковым тестам',
-    description: 'Подготовьтесь к TOEFL, IELTS, GRE и GMAT с Toefl Assist. Высокие баллы гарантированы!',
+    title: 'Toefl Assist - Профессиональные консультации по языковым тестам',
+    description: 'Получите экспертную поддержку для TOEFL, IELTS, GRE и GMAT с Toefl Assist. Индивидуальный подход к вашим целям.',
     images: [
       {
         url: 'https://www.toeflassist.org/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Toefl Assist - Подготовка к языковым тестам',
+        alt: 'Toefl Assist - Консультации по языковым тестам',
       },
     ],
     locale: 'ru_RU',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Toefl Assist - Подготовка к TOEFL и другим языковым тестам',
-    description: 'Эффективная подготовка к TOEFL, IELTS, GRE и GMAT. Высокие баллы с Toefl Assist.',
+    title: 'Toefl Assist - Экспертная поддержка в языковых тестах',
+    description: 'Профессиональные консультации по TOEFL, IELTS, GRE и GMAT. Индивидуальный подход к вашим академическим целям.',
     images: ['https://www.toeflassist.org/twitter-image.jpg'],
     creator: '@toeflassist',
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/favicon.ico',
-    apple: 'https://muhammadov-q.github.io/toeflassist/apple-icon.png',
+    apple: '/apple-icon.png',
   },
 }
 
