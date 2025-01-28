@@ -81,9 +81,9 @@ export default function Navbar() {
                     <div className="flex flex-col lg:flex-row justify-between items-center relative">
                         <div className="flex items-center justify-between w-full lg:w-auto h-8">
                             <div className="flex items-center">
-                                <Image src="https://muhammadov-q.github.io/toeflassist/logo.png" alt="Toefl Assist Logo" width={42} height={42} className="text-black dark:text-white"/>
+                                <Image src="https://muhammadov-q.github.io/toeflassist/logo.JPG" alt="Toefl Assist Logo" width={42} height={42} className="rounded-xl text-black dark:text-white"/>
                                 <div className="ml-2 flex flex-col justify-center h-full">
-                                    <span className="text-lg font-bold text-black dark:text-white uppercase leading-none">TOEFL ASSIST</span>
+                                    <span className="text-lg font-bold text-black dark:text-white uppercase leading-none">VISION ASSIST</span>
                                     <span className="mt-1 text-xs text-gray-600 dark:text-gray-400 leading-none pr-4">Быстро. Удобно. Безопасно.</span>
                                 </div>
                             </div>

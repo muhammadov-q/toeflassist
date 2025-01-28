@@ -28,9 +28,9 @@ export default function Contact() {
   }
 
   const socialLinks = [
-    { icon: WhatsappIcon, href: 'https://wa.me/yourphonenumber', label: 'WhatsApp', bgColor: 'bg-green-500', hoverColor: 'hover:bg-green-600' },
-    { icon: InstagramIcon, href: 'https://instagram.com/yourusername', label: 'Instagram', bgColor: 'bg-pink-500', hoverColor: 'hover:bg-pink-600' },
-    { icon: SendIcon, href: 'https://t.me/yourusername', label: 'Telegram', bgColor: 'bg-blue-500', hoverColor: 'hover:bg-blue-600' },
+    { icon: WhatsappIcon, href: 'https://wa.me/+996555005515', label: 'WhatsApp', bgColor: 'bg-green-500', hoverColor: 'hover:bg-green-600' },
+    { icon: InstagramIcon, href: 'https://www.instagram.com/claster.assist?igsh=MWVhN3o3Z2RvdHdubg%3D%3D&utm_source=qr', label: 'Instagram', bgColor: 'bg-pink-500', hoverColor: 'hover:bg-pink-600' },
+    { icon: SendIcon, href: 'https://t.me/toeflassist', label: 'Telegram', bgColor: 'bg-blue-500', hoverColor: 'hover:bg-blue-600' },
     { icon: MailIcon, href: 'mailto:your@email.com', label: 'Email', bgColor: 'bg-red-500', hoverColor: 'hover:bg-red-600' },
   ]
 

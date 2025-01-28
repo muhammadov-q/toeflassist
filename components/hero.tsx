@@ -79,7 +79,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" className="relative mb-20 pt-12 lg:pt-20 overflow-hidden">
+    <section id="hero" className="relative mb-20 pt-6 lg:pt-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
