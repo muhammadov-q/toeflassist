@@ -21,7 +21,7 @@ const socialLinks = [
   {
     icon: Instagram,
     label: "Instagram",
-    href: "https://www.instagram.com/claster.assist?igsh=MWVhN3o3Z2RvdHdubg%3D%3D&utm_source=qr",
+    href: "https://www.instagram.com/vision.assistt?igsh=MXE2ajBwYXByMzV2Zw==",
   },
 ]
 
