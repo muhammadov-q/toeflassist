@@ -12,25 +12,29 @@ const features = [
     title: "Тест IELTS",
     description: "Узнаете формат и динамику экзамена, прокачаете слабые стороны",
     icon: BookOpen,
-    gradient: "from-purple-50 to-pink-50",
+    gradient: "from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900",
+    iconColor: "text-purple-500 dark:text-purple-400",
   },
   {
     title: "Тест TOEFL",
     description: "Готовим к выпускным экзаменам и сдаче экзамена для поступления",
     icon: GraduationCap,
-    gradient: "from-blue-50 to-indigo-50",
+    gradient: "from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900",
+    iconColor: "text-blue-500 dark:text-blue-400",
   },
   {
     title: "Тест DUOLINGO",
     description: "Узнаете формат и динамику экзамена, прокачаете слабые стороны",
     icon: Globe,
-    gradient: "from-green-50 to-teal-50",
+    gradient: "from-green-100 to-teal-100 dark:from-green-900 dark:to-teal-900",
+    iconColor: "text-green-500 dark:text-green-400",
   },
   {
     title: "Тест GMAT, GRE",
     description: "Подготовка к GMAT для поступления в бизнес-школы",
     icon: TrendingUp,
-    gradient: "from-yellow-50 to-orange-50",
+    gradient: "from-yellow-100 to-orange-100 dark:from-yellow-900 dark:to-orange-900",
+    iconColor: "text-yellow-500 dark:text-yellow-400",
   },
 ]
 
@@ -75,10 +79,7 @@ export default function Hero() {
   }
 
   return (
-    <section
-      id="hero"
-      className="relative mb-20 pt-12 lg:pt-20 overflow-hidden"
-    >
+    <section id="hero" className="relative mb-20 pt-12 lg:pt-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -117,10 +118,10 @@ export default function Hero() {
                 href="https://t.me/toeflassist"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block border border-gray-200 dark:border-gray-700 rounded-xl p-5 bg-gradient-to-br ${feature.gradient} dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-500 h-full`}
+                className={`block border border-gray-200 dark:border-gray-700 rounded-xl p-5 bg-gradient-to-br ${feature.gradient} transition-all duration-300 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-500 h-full`}
               >
                 <div className="flex items-center mb-2">
-                  <feature.icon className="h-6 w-6 text-blue-500 dark:text-blue-400 mr-2" aria-hidden="true" />
+                  <feature.icon className={`h-6 w-6 ${feature.iconColor} mr-2`} aria-hidden="true" />
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{feature.title}</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{feature.description}</p>
@@ -139,3 +140,4 @@ export default function Hero() {
     </section>
   )
 }
+
