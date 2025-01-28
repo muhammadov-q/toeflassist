@@ -51,7 +51,7 @@ export default function TestResults() {
   }
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 mb-20">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
           Результаты наших студентов
