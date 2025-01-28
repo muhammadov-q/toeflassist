@@ -9,14 +9,15 @@ import { Input } from "@/components/ui/input"
 import { Search, ChevronDown, ChevronUp, ArrowUpRight, SortAsc, SortDesc, Filter } from 'lucide-react'
 
 const results = [
-  { id: 1, totalScore: 110, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl.png", details: "Reading: 28 | Listening: 27 | Speaking: 28 | Writing: 27" },
-  { id: 2, totalScore: 108, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl.png", details: "Reading: 27 | Listening: 26 | Speaking: 28 | Writing: 27" },
-  { id: 3, totalScore: 115, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl.png", details: "Reading: 29 | Listening: 29 | Speaking: 28 | Writing: 29" },
-  { id: 4, totalScore: 100, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl.png", details: "Reading: 28 | Listening: 27 | Speaking: 28 | Writing: 27" },
-  { id: 5, totalScore: 108, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl.png", details: "Reading: 27 | Listening: 26 | Speaking: 28 | Writing: 27" },
-  { id: 6, totalScore: 98, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl.png", details: "Reading: 29 | Listening: 29 | Speaking: 28 | Writing: 29" },
-  { id: 7, totalScore: 108, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl.png", details: "Reading: 27 | Listening: 26 | Speaking: 28 | Writing: 27" },
-  { id: 8, totalScore: 98, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl.png", details: "Reading: 29 | Listening: 29 | Speaking: 28 | Writing: 29" },
+  { id: 1, totalScore: 110, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl_1.PNG", details: "Reading: 28 | Listening: 27 | Speaking: 28 | Writing: 27" },
+  { id: 2, totalScore: 108, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl_2.PNG", details: "Reading: 27 | Listening: 26 | Speaking: 28 | Writing: 27" },
+  { id: 3, totalScore: 115, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl_3.PNG", details: "Reading: 29 | Listening: 29 | Speaking: 28 | Writing: 29" },
+  { id: 4, totalScore: 100, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl_4.PNG", details: "Reading: 28 | Listening: 27 | Speaking: 28 | Writing: 27" },
+  { id: 5, totalScore: 108, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl_5.PNG", details: "Reading: 27 | Listening: 26 | Speaking: 28 | Writing: 27" },
+  { id: 6, totalScore: 98, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/toefl_4.PNG", details: "Reading: 29 | Listening: 29 | Speaking: 28 | Writing: 29" },
+  { id: 7, totalScore: 108, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/duolingo_1.PNG", details: "Reading: 27 | Listening: 26 | Speaking: 28 | Writing: 27" },
+  { id: 8, totalScore: 98, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/duolingo_2.PNG", details: "Reading: 29 | Listening: 29 | Speaking: 28 | Writing: 29" },
+  { id: 9, totalScore: 111, testName: "TOEFL", image: "https://muhammadov-q.github.io/toeflassist/duolingo_3.PNG", details: "Reading: 29 | Listening: 29 | Speaking: 28 | Writing: 29" },
 ];
 
 

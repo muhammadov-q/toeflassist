@@ -106,6 +106,7 @@ export default function Footer() {
                 alt="Toefl Assist Логотип"
                 width={62}
                 height={62}
+                className="rounded-xl"
               />
               <div className="ml-2 flex flex-col justify-center h-full">
                 <span className="text-lg font-bold text-black dark:text-white uppercase leading-none">
