@@ -181,12 +181,12 @@ export default function Footer() {
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 sm:mb-0">
             © {new Date().getFullYear()} Toefl Assist. Все права защищены. При поддержке{" "}
             <a
-              href="https://www.kobiljon.tech/nfc.html"
+              href="https://www.kobiljon.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
-              Kobiljon.tech
+              Kobiljon.com
             </a>
           </p>
 
