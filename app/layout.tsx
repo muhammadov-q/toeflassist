@@ -65,6 +65,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        <meta name="yandex-verification" content="7e4c878689e28e66" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
           rel="apple-touch-icon"
@@ -84,6 +85,7 @@ export default function RootLayout({
           href="https://muhammadov-q.github.io/toeflassist/favicon-16x16.png"
         />
         <link rel="manifest" href="https://muhammadov-q.github.io/toeflassist/site.webmanifest" />
+        <title>Vision Assist</title>
       </head>
       <body className={inter.className}>
         {/* Yandex.Metrika counter */}
