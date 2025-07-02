@@ -31,7 +31,7 @@ export default function Contact() {
 
     try {
       const botToken = "7213438831:AAEgN-2Dyym_LnGmT8OckC9bBVejT7I77qM"
-      const chatId = "5575224915"
+      const chatId = "6066584454"
 
       const message = `
 New Contact Form Submission:
