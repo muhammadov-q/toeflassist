@@ -91,7 +91,7 @@ export default function HowItWorks() {
   }
 
   return (
-    <section id="how-it-works" className="mb-20 opacity-100 animate-fade-in-up px-4 sm:px-6 lg:px-8">
+    <section id="how-it-works" className="mb-20 opacity-100 animate-fade-in-up px-4 mt-2.5 sm:px-6 lg:px-8">
       <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
         Шаги для отличной сдачи экзамена
       </h2>

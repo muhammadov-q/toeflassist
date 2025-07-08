@@ -51,7 +51,7 @@ export default function Testimonials() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
-            className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
+            className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border-2 border-[#1e3a8a] dark:border-blue-400 shadow-lg"
           >
             <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
               <div className="flex flex-col items-center md:items-start">
