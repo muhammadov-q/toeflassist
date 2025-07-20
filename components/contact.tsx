@@ -56,7 +56,7 @@ export default function Contact() {
 
       if (data.ok) {
         // Redirect to success page instead of showing notification
-        router.push("/success")
+        router.push("https://www.toeflassist.org/success")
       } else {
         throw new Error("Failed to send message to Telegram")
       }
