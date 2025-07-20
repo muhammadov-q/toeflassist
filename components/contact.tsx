@@ -1,13 +1,14 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { PhoneIcon as WhatsappIcon, InstagramIcon, SendIcon, MailIcon } from "lucide-react"
 
 export default function Contact() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -32,9 +33,7 @@ export default function Contact() {
     try {
       const botToken = "7213438831:AAEgN-2Dyym_LnGmT8OckC9bBVejT7I77qM"
       const chatId = "6066584454"
-
-      const message = `
-New Contact Form Submission:
+      const message = `New Contact Form Submission:
 👤 Name: ${formData.name}
 📱 Phone: ${formData.phone}
 💬 Telegram: @${formData.telegram}
@@ -56,17 +55,8 @@ New Contact Form Submission:
       const data = await response.json()
 
       if (data.ok) {
-        setNotification({
-          show: true,
-          type: "success",
-          message: "Заявка отправлена! Мы свяжемся с вами в ближайшее время.",
-        })
-        setFormData({ name: "", phone: "", telegram: "" })
-
-        // Hide notification after 5 seconds
-        setTimeout(() => {
-          setNotification({ show: false, type: "", message: "" })
-        }, 5000)
+        // Redirect to success page instead of showing notification
+        router.push("/success")
       } else {
         throw new Error("Failed to send message to Telegram")
       }
@@ -77,7 +67,6 @@ New Contact Form Submission:
         type: "error",
         message: "Ошибка отправки. Пожалуйста, попробуйте еще раз или свяжитесь с нами напрямую.",
       })
-
       // Hide notification after 5 seconds
       setTimeout(() => {
         setNotification({ show: false, type: "", message: "" })
@@ -132,6 +121,7 @@ New Contact Form Submission:
             {notification.message}
           </div>
         )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
@@ -155,6 +145,7 @@ New Contact Form Submission:
               ))}
             </div>
           </div>
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-[#1e3a8a] dark:text-white mb-2">
@@ -214,4 +205,3 @@ New Contact Form Submission:
     </section>
   )
 }
-
